@@ -16,7 +16,7 @@
    static const QBluetoothUuid thingyButtonState(QStringLiteral("ef680302-9b35-4933-9b10-52ffa9740042"));
    static const QBluetoothUuid thingyLedControl(QStringLiteral("ef680301-9b35-4933-9b10-52ffa9740042"));
    static const QBluetoothUuid thingyMotion(QStringLiteral("ef680400-9b35-4933-9b10-52ffa9740042"));
-   static const QBluetoothUuid thingyAcc(QStringLiteral("ef680406-9b35-4933-9b10-52ffa9740042"));
+   static const QBluetoothUuid thingyAcc(QStringLiteral("ef68040a-9b35-4933-9b10-52ffa9740042"));
    static const QBluetoothAddress a1("D9:75:95:5C:B9:E6");
    static const QBluetoothAddress a2("DF:CB:A0:71:A8:6C");
 
@@ -46,7 +46,7 @@ private:
     QLowEnergyCharacteristic btn;
     QLowEnergyCharacteristic led;
     QLowEnergyCharacteristic acc;
-    
+
 public slots:
     void buttonChanged(const QLowEnergyCharacteristic &characteristic,
                        const QByteArray &newValue);
@@ -55,6 +55,7 @@ public slots:
     void connectedToDevice();
     void serviceDiscovered();
     void serviceStateChanged(QLowEnergyService::ServiceState newState);
+    void serviceMotionStateChanged(QLowEnergyService::ServiceState newState);
 
 signals:
    void buttonStateChanged(const QLowEnergyCharacteristic &characteristic,

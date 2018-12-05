@@ -75,6 +75,38 @@ void Thingy::switchOffLed(){
 void Thingy::buttonChanged(const QLowEnergyCharacteristic &characteristic, const QByteArray &newValue){
    emit buttonStateChanged(characteristic, newValue, getAddress());
 }
+void Thingy::motionChanged(const QLowEnergyCharacteristic &characteristic,
+                           const QByteArray &newValue){
+
+    static float tempx = 0;
+    static float tempy = 0;
+    static float tempz = 0;
+    static int8_t avg = 0;
+
+    float x = *reinterpret_cast<const float*>(newValue.data());
+    float y = *reinterpret_cast<const float*>(newValue.data()+4);
+    float z = *reinterpret_cast<const float*>(newValue.data()+8);
+
+
+
+    tempx += x;
+    tempy += y;
+    tempz += z;
+    avg++;
+       if(avg==5) {
+           avg = 0;
+           tempx = tempx/5;
+           tempy = tempy/5;
+           tempz = tempz/5;
+           qDebug() << "x : " << tempx << " y : " << tempy << " z : " << tempz;
+          /* qDebug() << "y : " << tempy;
+           qDebug() << "z : " << tempz;*/
+           tempx = 0;
+           tempy = 0;
+           tempz = 0;
+       }
+
+}
 
 void Thingy::connectedToDevice(){
    controller->discoverServices();
@@ -82,11 +114,17 @@ void Thingy::connectedToDevice(){
 
 void Thingy::serviceDiscovered(){
    service = controller->createServiceObject(thingyUIService);
+   serviceMotion = controller->createServiceObject(thingyMotion);
    connect(service,SIGNAL(stateChanged(QLowEnergyService::ServiceState)),
 	   this, SLOT(serviceStateChanged(QLowEnergyService::ServiceState)));
    connect(service,SIGNAL(characteristicChanged(const QLowEnergyCharacteristic&, const QByteArray&)),
            this, SLOT(buttonChanged(const QLowEnergyCharacteristic&, const QByteArray&)));
+   connect(serviceMotion,SIGNAL(stateChanged(QLowEnergyService::ServiceState)),
+           this, SLOT(serviceMotionStateChanged(QLowEnergyService::ServiceState)));
+   connect(serviceMotion,SIGNAL(characteristicChanged(const QLowEnergyCharacteristic&, const QByteArray&)),
+           this, SLOT(motionChanged(const QLowEnergyCharacteristic&, const QByteArray&)));
    service->discoverDetails();
+   serviceMotion->discoverDetails();
 }
 
 void Thingy::serviceStateChanged(QLowEnergyService::ServiceState newState){
@@ -105,7 +143,21 @@ void Thingy::serviceStateChanged(QLowEnergyService::ServiceState newState){
 	break;
         }
    }
+}
 
+void Thingy::serviceMotionStateChanged(QLowEnergyService::ServiceState newState){
+    qDebug() << newState;
+    switch(newState){
+        case QLowEnergyService::ServiceDiscovered:{
+            acc = serviceMotion->characteristic(thingyAcc);
+            setNotify_(*serviceMotion,acc,true);
+            break;
+        }
+
+        default:{
+            break;
+        }
+    }
 }
 bool Thingy::setNotify_(QLowEnergyService& serv, const QLowEnergyCharacteristic& charact, bool en){
    auto notifyDescriptor = charact.descriptor(QBluetoothUuid::ClientCharacteristicConfiguration);
