@@ -1,0 +1,21 @@
+# ninja log v5
+398	5941	0	CMakeFiles/HelloBT.dir/Thingy.cpp.o	b198ed486836a6b
+79	83	0	HelloBT_automoc.cpp	87c2bc0beaf1d91d
+343	9045	0	CMakeFiles/HelloBT.dir/HelloBluetooth.cpp.o	2b692d3c836d8b3b
+6597	7337	0	HelloBT	d84c689030c87847
+399	6597	0	CMakeFiles/HelloBT.dir/Manager.cpp.o	77b0bce1c454991a
+399	5776	0	CMakeFiles/HelloBT.dir/HelloBT_automoc.cpp.o	acb872c1e2c86f46
+7	317	0	CMakeFiles/HelloBT_automoc	92360fe5215acf3d
+319	5679	0	CMakeFiles/HelloBT.dir/HelloBT_automoc.cpp.o	acb872c1e2c86f46
+318	5843	0	CMakeFiles/HelloBT.dir/Thingy.cpp.o	b198ed486836a6b
+318	6508	0	CMakeFiles/HelloBT.dir/Manager.cpp.o	77b0bce1c454991a
+6509	7258	0	HelloBT	d84c689030c87847
+7	89	0	CMakeFiles/HelloBT_automoc	92360fe5215acf3d
+8	88	0	CMakeFiles/HelloBT_automoc	92360fe5215acf3d
+89	5546	0	CMakeFiles/HelloBT.dir/Manager.cpp.o	77b0bce1c454991a
+5547	6286	0	HelloBT	d84c689030c87847
+7	334	0	CMakeFiles/HelloBT_automoc	92360fe5215acf3d
+335	5121	0	CMakeFiles/HelloBT.dir/HelloBluetooth.cpp.o	2b692d3c836d8b3b
+336	5836	0	CMakeFiles/HelloBT.dir/HelloBT_automoc.cpp.o	acb872c1e2c86f46
+335	6479	0	CMakeFiles/HelloBT.dir/Manager.cpp.o	77b0bce1c454991a
+6480	7219	0	HelloBT	d84c689030c87847

@@ -1,0 +1,4 @@
+/home/pi/ourGit/task-1-raspberry-pi-nordic-thingy-2018-sdi002/HelloBT/Release/CMakeFiles/rebuild_cache.dir
+/home/pi/ourGit/task-1-raspberry-pi-nordic-thingy-2018-sdi002/HelloBT/Release/CMakeFiles/edit_cache.dir
+/home/pi/ourGit/task-1-raspberry-pi-nordic-thingy-2018-sdi002/HelloBT/Release/CMakeFiles/HelloBT.dir
+/home/pi/ourGit/task-1-raspberry-pi-nordic-thingy-2018-sdi002/HelloBT/Release/CMakeFiles/HelloBT_automoc.dir
