@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/HelloBT.dir/HelloBluetooth.cpp.o CMakeFiles/HelloBT.dir/Thingy.cpp.o CMakeFiles/HelloBT.dir/Manager.cpp.o CMakeFiles/HelloBT.dir/HelloBT_automoc.cpp.o  -o HelloBT -rdynamic /usr/lib/arm-linux-gnueabihf/libQt5Bluetooth.so.5.7.1 /usr/lib/arm-linux-gnueabihf/libQt5Core.so.5.7.1 

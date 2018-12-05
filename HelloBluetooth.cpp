@@ -6,7 +6,7 @@ int main(int argc, char** argv){
 	Manager m;
 	m.discoverDevices();
 	m.createThingy();
-        application.exec();
+	application.exec();
 
 	return 1;
 }

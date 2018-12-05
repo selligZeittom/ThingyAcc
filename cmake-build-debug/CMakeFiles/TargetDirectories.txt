@@ -1,0 +1,4 @@
+/tmp/tmp.3tbUQc9Zyx/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/tmp/tmp.3tbUQc9Zyx/cmake-build-debug/CMakeFiles/edit_cache.dir
+/tmp/tmp.3tbUQc9Zyx/cmake-build-debug/CMakeFiles/HelloBT.dir
+/tmp/tmp.3tbUQc9Zyx/cmake-build-debug/CMakeFiles/HelloBT_automoc.dir

@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+04d1ed57d98cb8a88bca461c40dfd6d5 CMakeFiles/HelloBT_automoc
